@@ -1,13 +1,3 @@
----
-page_type: sample
-languages:
-- csharp
-products:
-- dotnet
-description: "Add 150 character max description"
-urlFragment: "update-this-to-unique-url-stub"
----
-
 # Official Microsoft Sample
 
 <!-- 
@@ -18,36 +8,42 @@ Guidance on onboarding samples to docs.microsoft.com/samples: https://review.doc
 Taxonomies for products and languages: https://review.docs.microsoft.com/new-hope/information-architecture/metadata/taxonomies?branch=master
 -->
 
-Give a short description for your sample here. What does it do and why is it important?
+This repo contains sample implementaions of soft multi-tenant scenarios described in this [design doc](./arc-multitenancy-design.md) using Azure Arc for K8s for GitOps enablement.
 
 ## Contents
 
 Outline the file contents of the repository. It helps users navigate the codebase, build configuration and any related assets.
 
-| File/folder       | Description                                |
-|-------------------|--------------------------------------------|
-| `src`             | Sample source code.                        |
-| `.gitignore`      | Define what to ignore at commit time.      |
-| `CHANGELOG.md`    | List of changes to the sample.             |
-| `CONTRIBUTING.md` | Guidelines for contributing to the sample. |
-| `README.md`       | This README file.                          |
-| `LICENSE`         | The license for the sample.                |
+| File/folder          | Description                                  |
+|----------------------|----------------------------------------------|
+| `scenario1`          | Sample for Scenario 1                        |
+| `scenario1`          | Sample for Scenario 2                        |
+| `CODE_OF_CONDUCT.md` | Microsoft's code of conduct for open source. |
+| `README.md`          | This README file.                            |
+| `LICENSE`            | The license for the sample.                  |
+
+## Scenarios - Overview
+
+1. Multiple teams in a single cluster
+
+    * Deployment requirements:
+        * Need to be able to dedicate namespace or cluster to a tenant
+        * Need to provide as much Tenant autonomy as possible without compromising other tenants
+
+1. One team, multiple instances of the same application in a cluster
+
+    * Deployment requirements:
+        * Need to deploy different configurations for a single application
+        * Need to manage at least `prod` and `dev` versions and environments
 
 ## Prerequisites
 
-Outline the required components and tools that a user might need to have on their machine in order to run the sample. This can be anything from frameworks, SDKs, OS versions or IDE releases.
-
-## Setup
-
-Explain how to prepare the sample once the user clones or downloads the repository. The section should outline every step necessary to install dependencies and set up any settings (for example, API keys and output folders).
-
-## Running the sample
-
-Outline step-by-step instructions to execute the sample and see its output. Include steps for executing the sample from the IDE, starting specific services in the Azure portal or anything related to the overall launch of the code.
+* Arc connected cluster(s). Find out more information on how to onboard your clusters with Arc here: [Azure Arc for K8s Preview](https://github.com/Azure/azure-arc-kubernetes-preview/blob/master/docs/connect-a-cluster.md)
 
 ## Key concepts
 
-Provide users with more context on the tools and services used in the sample. Explain some of the code that is being used and how services interact with each other.
+* Kubernetes
+* GitOps
 
 ## Contributing
 
