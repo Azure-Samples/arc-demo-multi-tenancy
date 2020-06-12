@@ -1,0 +1,11 @@
+{
+    "properties": {
+         "repositoryUrl": "<TENANT_URL>",
+            "operatorNamespace": "<TENANT>",
+            "operatorInstanceName": "<TENANT>-operator",
+            "operatorType": "Flux",
+            "operatorScope": "namespace",
+            "enableHelmOperator": "false",
+            "operatorParams": "--git-branch master --git-path <PATH> --git-readonly --manifest-generation true"
+      }
+}

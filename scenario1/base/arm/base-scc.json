@@ -1,0 +1,15 @@
+{
+    "properties": {
+         "repositoryUrl": "<REPO>",
+            "operatorNamespace": "cluster",
+            "operatorInstanceName": "cluster-operator",
+            "operatorType": "Flux",
+            "operatorScope": "cluster",
+            "enableHelmOperator": "true",
+            "helmOperatorProperties": {
+                  "chartVersion": "0.6.0",
+                  "chartValues": "--set helm.versions=v3"
+            },
+            "operatorParams": "--git-branch master --git-path scenario1/<PATH> --git-readonly --manifest-generation true"
+      }
+}
