@@ -10,6 +10,6 @@
                   "chartVersion": "0.6.0",
                   "chartValues": "--set helm.versions=v3"
             },
-            "operatorParams": "--git-branch master --git-path <PATH> --git-readonly --manifest-generation true"
+            "operatorParams": "--git-branch master --git-path scenario2/<PATH> --git-readonly --manifest-generation true"
       }
 }
