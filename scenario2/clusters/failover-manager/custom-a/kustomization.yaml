@@ -2,3 +2,5 @@ namespace: custom-a
 resources:
 - ns.yaml
 - git@github.com:vyta/azure-voting-gitops-demo.git//prod
+patchesStrategicMerge:
+- azure-voting-patch.yaml
