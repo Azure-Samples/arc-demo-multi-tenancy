@@ -129,7 +129,7 @@ then
       echo "  - ./$TENANT" >> $CLUSTERKUSTOMIZE
     fi
     cp $YAMLDIR/.flux.yaml $CLUSTER_DIR/.flux.yaml
-    cp $APP/. $TENANT_DIR -r
+    cp -R $APP/. $TENANT_DIR
     for filename in $TENANT_DIR/*.yaml; do
       sed -i -e 's <TENANT> '$TENANT' g' $filename
     done
