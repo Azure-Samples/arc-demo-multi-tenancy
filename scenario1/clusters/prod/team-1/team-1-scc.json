@@ -1,0 +1,15 @@
+{
+    "properties": {
+         "repositoryUrl": "git@github.com:vyta/azure-voting-gitops-demo.git",
+            "operatorNamespace": "team-1",
+            "operatorInstanceName": "team-1-operator",
+            "operatorType": "Flux",
+            "operatorScope": "namespace",
+            "enableHelmOperator": "false",
+            "helmOperatorProperties": {
+                  "chartVersion": "0.6.0",
+                  "chartValues": "--set helm.versions=v3 --set allowNamespace=team-1"
+            },
+            "operatorParams": "--git-branch master --git-path prod --git-readonly --manifest-generation true"
+      }
+}

@@ -1,0 +1,15 @@
+{
+    "properties": {
+         "repositoryUrl": "git@github.com:Azure-Samples/arc-demo-multi-tenancy.git",
+            "operatorNamespace": "cluster",
+            "operatorInstanceName": "cluster-operator",
+            "operatorType": "Flux",
+            "operatorScope": "cluster",
+            "enableHelmOperator": "true",
+            "helmOperatorProperties": {
+                  "chartVersion": "0.6.0",
+                  "chartValues": "--set helm.versions=v3"
+            },
+            "operatorParams": "--git-branch master --git-path clusters/demo --git-readonly --manifest-generation true"
+      }
+}
