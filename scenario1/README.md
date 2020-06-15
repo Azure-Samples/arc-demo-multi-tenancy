@@ -39,6 +39,7 @@ You will need...
         --deploy
     ```
 
+1. You should see new directories corresponding to your clusters in the `clusters` folder
 1. Grab ssh key:
   
     ```sh
@@ -49,8 +50,9 @@ You will need...
     kubectl get gitconfig $CLUSTER_NAME-base-config -n cluster
     ```
 
-1. Git push to master of forked repo
-1. Observe resources on cluster via kubectl: `kubectl get all -n team-1`
+1. Add ssh key to `Settings > Deploy Keys` of forked repo
+1. Git push new directories to master of forked repo
+1. Observe resources on cluster via kubectl: `kubectl get all -n team-1`. It can take up to 5 minutes for `flux` to sync (default)
 
 ## configure-tenant.sh
 
