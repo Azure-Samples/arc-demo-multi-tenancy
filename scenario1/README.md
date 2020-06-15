@@ -34,7 +34,7 @@ You will need...
     # Optional: Dedicate tenant space on Dev cluster
     ./scripts/configure-tenant.sh --repo $REPO \
         --cluster $DEV_CLUSTER_NAME --arc-rg $ARC_RG \
-        --subscriptionId SUB_ID --tenant team-1 \
+        --subscriptionId $SUB_ID --tenant team-1 \
         --tenant-git git@github.com:vyta/azure-voting-gitops-demo.git --force --tenant-git-path dev \
         --deploy
     ```
@@ -44,10 +44,10 @@ You will need...
   
     ```sh
     # Using az cli
-    az k8sconfiguration show -g $ARC_RG -c $CLUSTER_NAME -n $CLUSTER_NAME-base-config
+    az k8sconfiguration show -g $ARC_RG -c $PROD_CLUSTER_NAME -n $PROD_CLUSTER_NAME-base-config --cluster-type connectedClusters
 
     # Using kubectl
-    kubectl get gitconfig $CLUSTER_NAME-base-config -n cluster
+    kubectl get gitconfig $PROD_CLUSTER_NAME-base-config -n cluster
     ```
 
 1. Add ssh key to `Settings > Deploy Keys` of forked repo
