@@ -354,7 +354,7 @@ There are a couple ways to configure automated upgrades with Flux:
 
 ## Open Questions
 
-* How to secure secrets and connection strings? Bedrock solves this by provisioning KeyVault upfront and deploying keyvault flexvolumes. Keyvault will work well for things in Azure but what about on prem or another cloud?
+* How to secure secrets and connection strings? Keyvault will work well for things in Azure but what about on prem or another cloud?
 * Will need to find out which policies are built-in and which need to be built.
 * If each tenant requires specific infrastructure, how do we solve this? Investigate [Crossplane](http://crossplane.io/) or [Azure Service Operator](https://github.com/Azure/azure-service-operator)
 

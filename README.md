@@ -36,6 +36,10 @@ Outline the file contents of the repository. It helps users navigate the codebas
         * Need to deploy different configurations for a single application
         * Need to manage at least `prod` and `dev` versions and environments
 
+## Limits/Constraints
+
+This sample does not include networking, security, or resource policies necessary for namespace isolation.
+
 ## Prerequisites
 
 * Arc connected cluster(s). Find out more information on how to onboard your clusters with Arc here: [Azure Arc for K8s Preview](https://github.com/Azure/azure-arc-kubernetes-preview/blob/master/docs/connect-a-cluster.md)
