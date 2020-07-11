@@ -332,7 +332,36 @@ Network Policies:
 * Default deny all per namespace
 * Allow ingress/egress to only what's necessary (depends on the workload)
 
-## TODO: Secret Management
+## Secret Management
+
+There are multiple ways to manage secrets within a K8s Multi-tenant Cluster.
+
+1. [Secrets Store CSI Driver](https://github.com/kubernetes-sigs/secrets-store-csi-driver) - By combining this CSI Driver with a Provider that accesses a given secrets storage solution, secrets can be chosen to be written to each pod in memory and also synced as K8s secrets. This CSI Driver is cloud agonistic and can be a choice for on Prem Clusters. In a Multi-tenant scenario, you can leverage your tenants to be authenticated/authorized to specific storage solutions  that are needed for their own tenant namespace, while blocking unnecessary tenants from accessing those secrets.
+
+    * Current Supported Providers
+      * [Azure Key Vault Provider](https://github.com/Azure/secrets-store-csi-driver-provider-azure)
+      * [Hashicorp Vault Provider](https://github.com/hashicorp/secrets-store-csi-driver-provider-vault)
+    * Pros
+      * Supported by Open Source and by K8s Sigs
+      * Cloud Agnostic - Able to use this solution on Prem, and in any cloud
+      * Use of multiple secrets storage solutions such as Hashicorp Vault and Azure Key Vault
+      * Choice of syncing secrets to K8s secrets.
+      * Windows Container support for K8s 1.18+
+      * Single Referenceable Secret Provider Class Resource that can be used across multiple deployments
+    * Cons
+      * Lack of Windows Container Support for K8s < 1.18
+      * AAD Pod Identity is not a viable solution for an On-Prem Cluster. AAD Pod Identiy intercepts traffic to Azure Instance Metadata which is only possible while on Azure.
+      * For Azure Service Principal Authorization / Authentication to Azure Key Vault, manual maintenance of SP credentials with K8s secrets increases security risk by having SP credentials written to disk (stored in etcd)
+
+2. [FlexVolume](https://kubernetes.io/docs/concepts/storage/volumes/#flexVolume)
+
+    Flex Volume Integerations:
+
+    1. [Azure Key Vault FlexVol](https://github.com/Azure/kubernetes-keyvault-flexvol)
+
+        **DEPRECATED For K8s Clusters 1.16+**
+
+3. [Akvk8s](https://akv2k8s.io/) - 3rd party tool that allows for environment variable injection into containers, may introduce challenges of observability as the wraps the running process inside a different process.
 
 ## Application Upgrades
 

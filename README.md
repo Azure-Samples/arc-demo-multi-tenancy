@@ -10,6 +10,31 @@ Taxonomies for products and languages: https://review.docs.microsoft.com/new-hop
 
 This repo contains sample implementaions of soft multi-tenant scenarios described in this [design doc](./arc-multitenancy-design.md) using Azure Arc for K8s for GitOps enablement.
 
+**IMPORTANT**: The design doc in this repository is meant to **inform the thinking around your own design** as different projects and organizations have different requirements. 
+
+## Scenarios - Overview
+
+The scenarios that typically lead users to seek a soft multi-tenant solution for their kubernetes clusters are the following:
+
+1. Enabling multiple teams to develop in a single cluster
+
+    * Deployment requirements:
+        * Need to be able to dedicate namespace or cluster to a tenant
+        * Need to provide as much Tenant autonomy as possible without compromising other tenants
+
+1. Enabling multiple instances of the same application in a cluster
+
+    * Deployment requirements:
+        * Need to deploy different configurations for a single application
+        * Need to manage at least `prod` and `dev` versions and environments
+
+## Sample Limits/Constraints
+
+This sample does not include:
+
+* networking, security, or resource policies necessary for namespace isolation.
+* managing secrets
+
 ## Contents
 
 Outline the file contents of the repository. It helps users navigate the codebase, build configuration and any related assets.
@@ -21,24 +46,6 @@ Outline the file contents of the repository. It helps users navigate the codebas
 | `CODE_OF_CONDUCT.md` | Microsoft's code of conduct for open source. |
 | `README.md`          | This README file.                            |
 | `LICENSE`            | The license for the sample.                  |
-
-## Scenarios - Overview
-
-1. Multiple teams in a single cluster
-
-    * Deployment requirements:
-        * Need to be able to dedicate namespace or cluster to a tenant
-        * Need to provide as much Tenant autonomy as possible without compromising other tenants
-
-1. One team, multiple instances of the same application in a cluster
-
-    * Deployment requirements:
-        * Need to deploy different configurations for a single application
-        * Need to manage at least `prod` and `dev` versions and environments
-
-## Limits/Constraints
-
-This sample does not include networking, security, or resource policies necessary for namespace isolation.
 
 ## Prerequisites
 
