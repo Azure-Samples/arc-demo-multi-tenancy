@@ -1,4 +1,4 @@
-# WIP - Connected Clusters - Soft-Multitenancy Design Doc
+# Connected Clusters - Soft-Multitenancy Design Doc
 
 ## Overview
 
