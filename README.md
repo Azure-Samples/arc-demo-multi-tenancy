@@ -1,4 +1,8 @@
-# Official Microsoft Sample
+# :warning: Archived - Official Microsoft Sample
+
+## Archived
+
+> :warning: With Flux's move to Flux v2, we recommend reviewing the multitenancy example found at [flux2-multi-tenancy](https://github.com/fluxcd/flux2-multi-tenancy).
 
 <!-- 
 Guidelines on README format: https://review.docs.microsoft.com/help/onboard/admin/samples/concepts/readme-template?branch=master
